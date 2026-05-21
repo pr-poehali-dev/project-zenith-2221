@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Play, Disc3, Music2, AudioWaveform } from "lucide-react";
+import Icon from "@/components/ui/icon";
 
 const HeroSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -22,10 +22,10 @@ const HeroSection = () => {
   }, []);
 
   const stats = [
-    { icon: <Play className="w-6 h-6" />, label: "Продано битов", value: "500+" },
-    { icon: <Disc3 className="w-6 h-6" />, label: "Уникальных треков", value: "1000+" },
-    { icon: <Music2 className="w-6 h-6" />, label: "Довольных артистов", value: "200+" },
-    { icon: <AudioWaveform className="w-6 h-6" />, label: "Жанров", value: "10+" },
+    { icon: <Icon name="Music2" size={24} />, label: "Аранжировок создано", value: "300+" },
+    { icon: <Icon name="Clock" size={24} />, label: "Дней — готовая аранжировка", value: "3" },
+    { icon: <Icon name="Users" size={24} />, label: "Довольных клиентов", value: "150+" },
+    { icon: <Icon name="Star" size={24} />, label: "Лет в музыке", value: "8+" },
   ];
 
   return (
@@ -42,12 +42,19 @@ const HeroSection = () => {
           <div className="text-center mb-16 animate-fade-in">
             <h1 className="text-6xl md:text-8xl font-bold mb-6 tracking-tight relative">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-zinc-500">
-                Подними свой звук
+                Твоя идея —
+              </span>
+              <br />
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-zinc-500">
+                живая музыка
               </span>
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-zinc-400 max-w-3xl mx-auto">
-              Создаю уникальные биты, которые помогут артистам выделиться. От трэпа до лоу-фай — найди
-              свой идеальный звук и выведи музыку на новый уровень.
+            <p className="text-xl md:text-2xl mb-4 text-zinc-400 max-w-3xl mx-auto">
+              Превращаю наброски из СУНО в профессиональную аранжировку под ключ за 3 дня.
+              Мастеринг, сведение, тексты — всё в одном месте.
+            </p>
+            <p className="text-lg mb-8 text-zinc-500 max-w-2xl mx-auto">
+              Музыка на заказ для артистов, блогеров, брендов и всех, кто слышит музыку внутри
             </p>
             <div className="relative inline-block">
               <Button
@@ -55,18 +62,16 @@ const HeroSection = () => {
                 className="bg-white text-black hover:bg-zinc-200 text-lg px-8 py-6 rounded-full transition-all duration-300 hover:scale-105"
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
-                asChild
+                onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
               >
-                <a href="#" target="_blank" rel="noopener noreferrer">
-                  <span className="relative z-10">Слушать биты</span>
-                  <span
-                    className={`ml-2 relative z-10 transition-transform duration-200 ${
-                      isHovered ? "translate-x-1" : ""
-                    }`}
-                  >
-                    &rarr;
-                  </span>
-                </a>
+                <span className="relative z-10">Заказать аранжировку</span>
+                <span
+                  className={`ml-2 relative z-10 transition-transform duration-200 ${
+                    isHovered ? "translate-x-1" : ""
+                  }`}
+                >
+                  &rarr;
+                </span>
               </Button>
             </div>
           </div>

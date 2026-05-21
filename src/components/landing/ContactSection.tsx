@@ -64,7 +64,10 @@ const ContactSection = () => {
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
         }`}
       >
-        <h2 className="text-5xl font-bold mb-10 text-center text-zinc-200">Связаться со мной</h2>
+        <h2 className="text-5xl font-bold mb-4 text-center text-zinc-200">Оставить заявку</h2>
+        <p className="text-zinc-400 text-center mb-10 max-w-md mx-auto">
+          Опишите, что нужно — и я свяжусь с вами в течение нескольких часов
+        </p>
         <div
           className={`max-w-md mx-auto bg-black/50 backdrop-blur-lg rounded-lg p-8 shadow-2xl border border-white/10 transition-all duration-500 delay-200 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
@@ -96,7 +99,7 @@ const ContactSection = () => {
             <div className="mb-4">
               <Textarea
                 name="message"
-                placeholder="Ваше сообщение"
+                placeholder="Опишите, что хотите создать: жанр, настроение, есть ли набросок в СУНО..."
                 value={formData.message}
                 onChange={handleChange}
                 required
